@@ -1,0 +1,25 @@
+{
+  "name": "imagesldr",
+  "version": "1.0.0",
+  "description": "image slider css and javascript",
+  "main": "carousel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabr1el1/ImageSlider.git"
+  },
+  "keywords": [
+    "css",
+    "html",
+    "javascript",
+    "carousel"
+  ],
+  "author": "gabr1el1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabr1el1/ImageSlider/issues"
+  },
+  "homepage": "https://github.com/gabr1el1/ImageSlider#readme"
+}

@@ -1,8 +1,6 @@
 let carousel = Array.from(document.querySelectorAll(".carousel img"));
-let carouseLength = carousel.length;
-let dotsControl = Array.from(
-  document.querySelectorAll(".carousel .dot-control li span")
-);
+let carouselLength = carousel.length;
+let dotControl = document.querySelector(".carousel .dot-control");
 let arrowLeft = document.querySelector(".arrow-left");
 let arrowRight = document.querySelector(".arrow-right");
 
@@ -14,15 +12,25 @@ carousel.forEach((element, index) => {
   }
 });
 
-dotsControl[activeImage].classList.add("active");
-arrowLeft.addEventListener("click", previous);
-arrowRight.addEventListener("click", next);
+let htmlString = "";
+for (let i = 0; i < carouselLength; i++) {
+  htmlString += `<li><span>.</span></li>`;
+}
+dotControl.innerHTML = htmlString;
+let dotsControl = Array.from(
+  document.querySelectorAll(".carousel .dot-control li span")
+);
+
 dotsControl.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     selectImage(index);
   });
 });
 let myTimer = setInterval(next, 5000);
+
+dotsControl[activeImage].classList.add("active");
+arrowLeft.addEventListener("click", previous);
+arrowRight.addEventListener("click", next);
 
 function selectImage(index) {
   dotsControl[activeImage].classList.remove("active");
@@ -36,7 +44,7 @@ function previous() {
   dotsControl[activeImage].classList.remove("active");
   carousel[activeImage].classList.remove("visible");
   if (activeImage == 0) {
-    activeImage = carouseLength - 1;
+    activeImage = carouselLength - 1;
   } else {
     activeImage--;
   }
@@ -57,7 +65,7 @@ function previous() {
 function next() {
   dotsControl[activeImage].classList.remove("active");
   carousel[activeImage].classList.remove("visible");
-  if (activeImage == carouseLength - 1) {
+  if (activeImage == carouselLength - 1) {
     activeImage = 0;
   } else {
     activeImage++;
