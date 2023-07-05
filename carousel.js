@@ -38,6 +38,8 @@ function selectImage(index) {
   activeImage = index;
   carousel[activeImage].classList.add("visible");
   dotsControl[activeImage].classList.add("active");
+  clearInterval(myTimer);
+  myTimer = setInterval(next, 5000);
 }
 
 function previous() {
