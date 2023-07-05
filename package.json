@@ -1,6 +1,6 @@
 {
   "name": "imagesldr",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "image slider css and javascript",
   "main": "carousel.js",
   "scripts": {
